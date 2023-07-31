@@ -37,5 +37,5 @@ botao_mostrar_mensagem.pack(pady=20)
 mensagem_pronta = tk.Label(janela, text="", font=fonte)
 mensagem_pronta.pack(pady=10)
 
-# inicia o loop principal da interface gráfica
+# inicia o loop principal da interface grafica
 janela.mainloop()
