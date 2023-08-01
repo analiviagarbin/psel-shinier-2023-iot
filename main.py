@@ -1,44 +1,51 @@
-import customtkinter as ctk  # biblioteca de interface grafica
+import tkinter as tk  # biblioteca de interface grafica
 
 
-# interface
 def gerar_mensagem():
     nome = nomeD.get()  # nome recebe o get de nomeD
     mensagem = f"{nome}, candidato(a) do processo seletivo Shinier IoT"
-    mensagem_pronta.configure(text=mensagem)
+    mensagem_pronta.config(text=mensagem)
 
-
-ctk.set_appearance_mode("ligth")
-ctk.set_default_color_theme("green")
 
 # cria a janela principal "Gerar Mensagem"
-janela = ctk.CTk()
+janela = tk.Tk()
 janela.title("Gerar Mensagem")
 janela.geometry("400x200")  # tamanho da janela fixo
 fonte = ("Arial", 12)
 
 # texto principal
-texto_orientacao = ctk.CTkLabel(janela, text="Digite o seu nome:", font=fonte)
-texto_orientacao.pack(pady=10, padx=10)
+texto_orientacao = tk.Label(janela, text="Digite o seu nome:", font=fonte)
+texto_orientacao.grid(column=0, row=0)  # posiciona o texto na janela
+texto_orientacao.pack(pady=20)
 
 # caixa de entrada do nome
-nomeD = ctk.CTkEntry(
-    janela, placeholder_text="Seu nome", font=fonte, fg_color="transparent"
-)
-nomeD.pack(padx=10)
+nomeD = tk.Entry(janela, font=fonte)
+nomeD.pack()
+nomeD.focus()
 
 # botão
-fonte_botao = ("Arial", 14)
-botao_mostrar_mensagem = ctk.CTkButton(
+botao_bg = "#32CD99"
+botao_fg = "white"  # cor do texto
+botao_mostrar_mensagem = tk.Button(
     janela,
     text="Mostrar Mensagem",
-    font=fonte_botao,
+    font=fonte,
+    fg=botao_fg,
+    bg=botao_bg,
     command=gerar_mensagem,
 )
-botao_mostrar_mensagem.pack(padx=10, pady=5)
+botao_mostrar_mensagem.pack(pady=10)
 
-mensagem_pronta = ctk.CTkLabel(janela, text="", font=fonte)
-mensagem_pronta.pack(pady=10, padx=10)
+mensagem_pronta = tk.Label(janela, text="", font=fonte)
+mensagem_pronta.pack(pady=10)
+
+largura_janela = 400
+altura_janela = 200
+largura_tela = janela.winfo_screenwidth()
+altura_tela = janela.winfo_screenheight()
+posicao_x = int((largura_tela - largura_janela) / 2)
+posicao_y = int((altura_tela - altura_janela) / 2)
+janela.geometry(f"{largura_janela}x{altura_janela}+{posicao_x}+{posicao_y}")
 
 # inicia o loop principal da interface grafica
 janela.mainloop()
