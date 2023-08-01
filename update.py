@@ -1,7 +1,5 @@
 import git  # biblioteca de interacao com repositorios git
 import subprocess  # executar comandos no sistema operacional
-import schedule  # biblioteca para agendar verificacao
-import time
 
 
 # auto atualização
@@ -32,13 +30,3 @@ def update_h():
     git_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"  # define a URL do repositorio Git e o arquivo alvo para atualizar
     main_cod = "main.py"  # arquivo principal
     update_git(git_url, main_cod)  # chama a funcao para atualizar o arquivo alvo
-
-
-if __name__ == "__main__":
-    # agendando a funcao de atualizacao para ser executada a cada 1 hora
-    schedule.every(1).hour.do(update_h)
-
-    # loop para continuar agendando e executando as tarefas agendadas
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
