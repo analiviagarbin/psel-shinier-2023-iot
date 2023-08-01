@@ -41,6 +41,27 @@ pip3 install schedule
 sudo apt-get install python3-tk
 ```
 
-## Instruções de configuração
+## Configurando o Raspberry Pi
 
-- (Sendo desenvolvidas)
+### Inicialização automática
+
+O programa inicia automaticamente quando o Raspberry Pi é ligado:
+
+- Editando o rc.local
+
+```
+sudo nano /etc/rc.local
+```
+
+- Adicionar no final do arquivo *antes do comando exit 0*
+Conferir a localização e nome do arquivo na máquina.
+
+```
+sudo python3 /home/pi/main.py &
+```
+
+Para testes:
+
+```
+sudo reboot
+```
