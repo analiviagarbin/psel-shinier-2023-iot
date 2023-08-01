@@ -8,25 +8,23 @@ import subprocess  # executar comandos no sistema operacional
 # update: arquivo a ser atualizado
 def update_git(fonte, main_cod):
     try:
-        # se o repositorio nao existe na maquina, tentativa de clonar
-        repo = git.Repo.fonte(fonte, "temp_fonte", branch="main")
-    except git.exc.GitCommandError:
-        # caso o repositorio ja exista localmente, realizar um pull para atualizar
-        repo = git.Repo("temp_fonte")
-        repo.remotes.origin.pull()
+        if os.path.exists("temp_fonte"):
+            # Caso a pasta temp_fonte exista, puxar as atualizações
+            repo = git.Repo("temp_fonte")
+            repo.remotes.origin.pull()
+        else:
+            # Se a pasta temp_fonte não existir, clonar o repositório
+            repo = git.Repo.clone_from(fonte, "temp_fonte", branch="main")
 
-    # atualiza o arquivo alvo com a versao mais recente
-    # abre o arquivo main_cod em modo de escrita 'w'
-    with open(main_cod, "w") as target:
-        # le o conteudo do arquivo temporario e escreve no main_cod (target)
-        with open(f"temp_fonte/{main_cod}") as source:
-            target.write(source.read())
+        # Atualiza o arquivo alvo com a versão mais recente
+        shutil.copy(f"temp_fonte/{main_cod}", main_cod)
 
-    # limpa o repositorio temporario apos a atualizacao
-    subprocess.run(["rm", "-rf", "temp_fonte"])
+    except git.exc.GitCommandError as e:
+        print(f"Erro ao atualizar: {e}")
 
 
 def update_h():
-    git_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"  # define a URL do repositorio Git e o arquivo alvo para atualizar
-    main_cod = "main.py"  # arquivo principal
-    update_git(git_url, main_cod)  # chama a funcao para atualizar o arquivo alvo
+    git_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"
+    main_cod = "main.py"
+    update_git(git_url, main_cod)
+    gerar_mensagem()
