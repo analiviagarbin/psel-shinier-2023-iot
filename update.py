@@ -30,7 +30,7 @@ def update_git(fonte, main_cod):
 
 def update_h():
     git_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"  # define a URL do repositorio Git e o arquivo alvo para atualizar
-    main_cod = "main.py"  # arquivo principal completo
+    main_cod = "main.py"  # arquivo principal
     update_git(git_url, main_cod)  # chama a funcao para atualizar o arquivo alvo
 
 
