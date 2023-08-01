@@ -19,14 +19,10 @@ Vaga de Desenvolvedor(a) IoT
 
 Instalação em Raspbian:
 
-```
-sudo apt-get update
-```
-
 - GitPython
 
 ```
-pip3 install gitpython
+pip3 install git-python
 ```
 
 - Schedule
@@ -47,13 +43,13 @@ sudo apt-get install python3-tk
 
 O programa inicia automaticamente quando o Raspberry Pi é ligado:
 
-- Editando o rc.local
+Editando o rc.local
 
 ```
 sudo nano /etc/rc.local
 ```
 
-- Adicionar no final do arquivo *antes do comando exit 0*
+Adicionar no final do arquivo *antes do comando exit 0*
 Conferir a localização e nome do arquivo na máquina.
 
 ```
