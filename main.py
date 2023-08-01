@@ -1,12 +1,14 @@
+#! /usr/bin/env python3
 import tkinter as tk  # biblioteca de interface grafica
-import schedule
-import time
-from update import update_h
+
+# import schedule
+# import time
+# from update import update_h
 
 
 def gerar_mensagem():
     nome = nomeD.get()  # nome recebe o get de nomeD
-    mensagem = f"{nome}, candidato(a) do processo Mudança seletivo Shinier IoT"
+    mensagem = f"{nome}, candidato(a) do processo seletivo Shinier IoT"
     mensagem_pronta.config(text=mensagem)
 
 
@@ -53,11 +55,11 @@ janela.geometry(f"{largura_janela}x{altura_janela}+{posicao_x}+{posicao_y}")
 # inicia o loop principal da interface grafica
 janela.mainloop()
 
-if __name__ == "__main__":
-    # agendando a funcao de atualizacao para ser executada a cada 1 minuto
-    schedule.every(1).minutes.do(update_h)
 
-    # loop para continuar agendando e executando as tarefas agendadas
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
+# if __name__ == "__main__":
+#  schedule.every(1).minutes.do(update_h)
+#
+#   # loop para continuar agendando e executando as tarefas agendadas
+#    while True:
+#        schedule.run_pending()
+#        time.sleep(60)

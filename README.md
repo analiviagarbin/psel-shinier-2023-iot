@@ -10,6 +10,8 @@ Vaga de Desenvolvedor(a) IoT
 - O programa inicia automaticamente quando o Raspberry Pi for ligado.
 - O programa possui uma interface de usuário simples onde o candidato pode inserir o seu nome e, ao clicar em um botão, a mensagem "candidato processo seletivo shinier iot" aparece.
 
+ ![Aparência atual do projeto](projeto.jpeg)
+
 ## Pré-requisitos
 
 - Python 3 (versão mais recente)
@@ -41,19 +43,20 @@ sudo apt-get install python3-tk
 
 ### Inicialização automática
 
-O programa inicia automaticamente quando o Raspberry Pi é ligado:
+O programa inicia automaticamente quando o Raspberry Pi é ligado e sempre que um noto terminal é aberto:
 
-Editando o rc.local
-
-```
-sudo nano /etc/rc.local
-```
-
-Adicionar no final do arquivo *antes do comando exit 0*
-Conferir a localização e nome do arquivo na máquina.
+Editando o .bashrc
 
 ```
-sudo python3 /home/pi/main.py &
+sudo nano /etc/.bashrc
+```
+
+Adicionar no final do arquivo
+*Conferir a localização e nome do arquivo na máquina*
+
+```
+echo Running at boot 
+sudo python3 /home/pi/main.py
 ```
 
 Para testes:
