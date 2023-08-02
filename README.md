@@ -17,6 +17,11 @@ Vaga de Desenvolvedor(a) IoT
 - Python 3 (versão mais recente)
 - Raspberry Pi (alternativas de emuladores como Docker ou Máquina Virtual são o suficiente)
 
+### Máquina Virtual
+
+- VirtualBox
+- [Instalação da imagem utilizada](https://downloads.raspberrypi.org/rpd_x86/images/)
+
 ## Bibliotecas
 
 Instalação em Raspbian:
