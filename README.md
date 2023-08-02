@@ -53,7 +53,7 @@ O programa inicia automaticamente quando o Raspberry Pi é ligado e sempre que u
 Editando o .bashrc
 
 ```
-sudo nano /etc/.bashrc
+sudo nano /home/pi/.bashrc
 ```
 
 Adicionar no final do arquivo
