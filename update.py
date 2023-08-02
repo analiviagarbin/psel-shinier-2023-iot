@@ -1,32 +1,40 @@
-import git  # biblioteca de interacao com repositorios git
-import subprocess  # executar comandos no sistema operacional
+from git import Repo  # biblioteca para interação com o github
+import os
+import shutil
 
 
-# auto atualização
-# funcao de atualizacao a partir do repositorio
-# fonte: repositorio de parametro para atualizacao
-# update: arquivo a ser atualizado
-def update_git(fonte, main_cod):
-    try:
-        # se o repositorio nao existe na maquina, tentativa de clonar
-        repo = git.Repo.fonte(fonte, "temp_fonte", branch="main")
-    except git.exc.GitCommandError:
-        # caso o repositorio ja exista localmente, realizar um pull para atualizar
-        repo = git.Repo("temp_fonte")
-        repo.remotes.origin.pull()
+def UpdateInt():
+    # remove o arquivo desafado do diretório principal
+    def MoveDef(arq_ant, saves):
+        # mover o arquivo 'arq_ant' da pasta principal para a pasta 'saves'
+        shutil.move(arq_ant, os.path.join(saves, os.path.basename(arq_ant)))
 
-    # atualiza o arquivo alvo com a versao mais recente
-    # abre o arquivo main_cod em modo de escrita 'w'
-    with open(main_cod, "w") as target:
-        # le o conteudo do arquivo temporario e escreve no main_cod (target)
-        with open(f"temp_fonte/{main_cod}") as source:
-            target.write(source.read())
+    # clona o repositorio do link completo
+    def CloneInt(repo_url, arq_ant, temp):
+        # clonar o repositório no diretório 'temp' e mover o arquivo 'arq_ant'
+        # da pasta 'temp_clone' para a pasta principal
+        repo = Repo.clone_from(repo_url, temp)
+        shutil.move(
+            arq_temp_interface, os.path.join(os.getcwd(), os.path.basename(arq_ant))
+        )
 
-    # limpa o repositorio temporario apos a atualizacao
-    subprocess.run(["rm", "-rf", "temp_fonte"])
+    # localizacoes dos arquivos
+    repo_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"
+    arq_ant = "./interface.py"
+    arq_temp_interface = "./temp_clone/interface.py"
+    temp = "./temp_clone"
+    saves = "./saves"
 
+    # se as pastas já nao existirem, cria uma nova
+    if not os.path.exists(temp):
+        os.makedirs(temp)
 
-def update_h():
-    git_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"  # define a URL do repositorio Git e o arquivo alvo para atualizar
-    main_cod = "main.py"  # arquivo principal
-    update_git(git_url, main_cod)  # chama a funcao para atualizar o arquivo alvo
+    if not os.path.exists(saves):
+        os.makedirs(saves)
+
+    MoveDef(arq_ant, saves)
+    CloneInt(repo_url, arq_ant, temp)
+
+    # apaga as pastas temporarias
+    shutil.rmtree(saves)
+    # shutil.rmtree(temp) # ainda nao funciona, erro de permissao
