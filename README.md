@@ -48,7 +48,7 @@ sudo apt-get install python3-tk
 
 ### Inicialização automática
 
-O programa inicia automaticamente quando o Raspberry Pi é ligado e sempre que um noto terminal é aberto:
+O programa inicia automaticamente quando o Raspberry Pi é ligado:
 
 Editando o rc.local
 
