@@ -55,6 +55,6 @@ def UpdateInt():
 
     # apaga as pastas temporarias
     shutil.rmtree(saves)
-    # shutil.rmtree(temp)  # ainda nao funciona, erro de permissao
+    # shutil.rmtree(temp)
 
     Aviso()
