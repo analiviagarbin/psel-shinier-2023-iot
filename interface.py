@@ -14,7 +14,7 @@ def janela():
     fonte = ("Arial", 12)
 
     # texto principal
-    texto_orientacao = tk.Label(janela, text="Digite o seu nome:", font=fonte)
+    texto_orientacao = tk.Label(janela, text="Digite o MUDEI AQUI seu nome:", font=fonte)
     texto_orientacao.grid(column=0, row=0)  # posiciona o texto na janela
     texto_orientacao.pack(pady=20)
 

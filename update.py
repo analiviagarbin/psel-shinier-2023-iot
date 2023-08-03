@@ -1,6 +1,9 @@
 from git import Repo  # biblioteca para interação com o github
 import os
 import shutil
+from interface import janela
+import tkinter as tk
+import sys
 
 
 def UpdateInt():
@@ -18,8 +21,23 @@ def UpdateInt():
             arq_temp_interface, os.path.join(os.getcwd(), os.path.basename(arq_ant))
         )
 
+    def Aviso():
+        aviso = tk.Tk()
+        aviso.title("Aviso - Update")
+        aviso.geometry("400x100")
+        fonte = ("Arial", 12)
+
+        # texto principal
+        texto = tk.Label(
+            aviso, text="A interface foi atualizada e deve ser reiniciada.", font=fonte
+        )
+        texto.grid(column=0, row=2)  # posiciona o texto na janela
+        texto.pack(pady=20)
+
+        aviso.mainloop()
+
     # localizacoes dos arquivos
-    repo_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"
+    repo_url = "https://github.com/analiviagarbin/testes"
     arq_ant = "./interface.py"
     arq_temp_interface = "./temp_clone/interface.py"
     temp = "./temp_clone"
@@ -37,4 +55,7 @@ def UpdateInt():
 
     # apaga as pastas temporarias
     shutil.rmtree(saves)
-    # shutil.rmtree(temp) # ainda nao funciona, erro de permissao
+    # shutil.rmtree(temp)  # ainda nao funciona, erro de permissao
+
+    Aviso()
+    sys.exit()
