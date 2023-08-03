@@ -3,7 +3,7 @@ import os
 import shutil
 from interface import janela
 import tkinter as tk
-import sys
+import subprocess
 
 
 def UpdateInt():
@@ -21,6 +21,10 @@ def UpdateInt():
             arq_temp_interface, os.path.join(os.getcwd(), os.path.basename(arq_ant))
         )
 
+    def reiniciar():
+        # executa o arquivo main.py novamente
+        subprocess.call(["python3", "main.py"])
+
     def Aviso():
         aviso = tk.Tk()
         aviso.title("Aviso - Update")
@@ -29,7 +33,7 @@ def UpdateInt():
 
         # texto principal
         texto = tk.Label(
-            aviso, text="A interface foi atualizada e deve ser reiniciada.", font=fonte
+            aviso, text="A interface foi atualizada e será reiniciada.", font=fonte
         )
         texto.grid(column=0, row=2)  # posiciona o texto na janela
         texto.pack(pady=20)
@@ -58,3 +62,4 @@ def UpdateInt():
     # shutil.rmtree(temp)
 
     Aviso()
+    reiniciar()

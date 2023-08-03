@@ -50,17 +50,18 @@ sudo apt-get install python3-tk
 
 O programa inicia automaticamente quando o Raspberry Pi é ligado:
 
-Editando o rc.local
+Editando o .bashrc
 
 ```
-sudo nano /etc/rc.local
+sudo nano /home/pi/.bashrc
 ```
 
-Adicionar no final do arquivo antes do "exit 0"
+Adicionar no final do arquivo
 (Conferir a localização e nome do arquivo na máquina)
 
 ```
-sudo python3 /home/pi/main.py &
+echo Running at boot 
+sudo python3 /home/pi/main.py
 ```
 
 Para testes:
