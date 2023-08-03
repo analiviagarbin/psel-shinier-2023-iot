@@ -1,9 +1,9 @@
 from git import Repo  # biblioteca para interação com o github
 import os
 import shutil
-from interface import janela
 import tkinter as tk
 import subprocess
+from interface import Aviso
 
 
 def UpdateInt():
@@ -24,21 +24,6 @@ def UpdateInt():
     def reiniciar():
         # executa o arquivo main.py novamente
         subprocess.call(["python3", "main.py"])
-
-    def Aviso():
-        aviso = tk.Tk()
-        aviso.title("Aviso - Update")
-        aviso.geometry("400x100")
-        fonte = ("Arial", 12)
-
-        # texto principal
-        texto = tk.Label(
-            aviso, text="A interface foi atualizada e será reiniciada.", font=fonte
-        )
-        texto.grid(column=0, row=2)  # posiciona o texto na janela
-        texto.pack(pady=20)
-
-        aviso.mainloop()
 
     # localizacoes dos arquivos
     repo_url = "https://github.com/analiviagarbin/testes"

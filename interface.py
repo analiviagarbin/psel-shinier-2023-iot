@@ -50,3 +50,44 @@ def janela():
 
     # inicia o loop principal da interface grafica
     janela.mainloop()
+
+
+def Aviso():
+    aviso = tk.Tk()
+    aviso.title("Aviso - Update")
+    aviso.geometry("400x200")
+    fonte = ("Arial", 12)
+
+    # texto principal
+    texto = tk.Label(
+        aviso, text="A interface foi atualizada e será reiniciada.", font=fonte
+    )
+    texto.grid(column=0, row=2)  # posiciona o texto na janela
+    texto.pack(pady=20)
+
+    def FecharAviso():
+        aviso.destroy()
+
+    # botão
+    botao_bg = "#32CD99"
+    botao_fg = "white"  # cor do texto
+    botao_aviso = tk.Button(
+        aviso,
+        text="Reiniciar",
+        font=fonte,
+        fg=botao_fg,
+        bg=botao_bg,
+        command=FecharAviso,
+    )
+    botao_aviso.pack(padx=10)
+
+    # posiciona a aviso no centro do display
+    largura_aviso = 400
+    altura_aviso = 200
+    largura_tela = aviso.winfo_screenwidth()
+    altura_tela = aviso.winfo_screenheight()
+    posicao_x = int((largura_tela - largura_aviso) / 2)
+    posicao_y = int((altura_tela - altura_aviso) / 2)
+    aviso.geometry(f"{largura_aviso}x{altura_aviso}+{posicao_x}+{posicao_y}")
+
+    aviso.mainloop()
