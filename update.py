@@ -58,4 +58,3 @@ def UpdateInt():
     # shutil.rmtree(temp)  # ainda nao funciona, erro de permissao
 
     Aviso()
-    sys.exit()
