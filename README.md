@@ -26,16 +26,14 @@ Vaga de Desenvolvedor(a) IoT
 
 Instalação em Raspbian:
 
+```
+sudo apt update
+```
+
 - GitPython
 
 ```
-pip3 install git-python
-```
-
-- Schedule
-
-```
-pip3 install schedule
+sudo apt install git
 ```
 
 - Tkinter (interface gráfica)

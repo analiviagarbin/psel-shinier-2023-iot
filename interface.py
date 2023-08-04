@@ -10,7 +10,7 @@ def janela():
     # cria a janela principal "Gerar Mensagem"
     janela = tk.Tk()
     janela.title("Gerar Mensagem")
-    janela.geometry("400x200")  # tamanho da janela fixo
+    janela.geometry("400x100")  # tamanho da janela fixo
     fonte = ("Arial", 12)
 
     # texto principal
@@ -34,14 +34,14 @@ def janela():
         bg=botao_bg,
         command=gerar_mensagem,
     )
-    botao_mostrar_mensagem.pack(pady=10)
+    botao_mostrar_mensagem.pack(pady=5)
 
     mensagem_pronta = tk.Label(janela, text="", font=fonte)
     mensagem_pronta.pack(pady=10)
 
     # posiciona a janela no centro do display
     largura_janela = 400
-    altura_janela = 200
+    altura_janela = 100
     largura_tela = janela.winfo_screenwidth()
     altura_tela = janela.winfo_screenheight()
     posicao_x = int((largura_tela - largura_janela) / 2)

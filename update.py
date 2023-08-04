@@ -26,7 +26,7 @@ def UpdateInt():
 
     # localizacoes dos arquivos
     # adicionar caminho COMPLETO
-    repo_url = "https://github.com/analiviagarbin/testes"
+    repo_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"
     arq_ant = "./interface.py"
     arq_fim = "./"
     arq_temp_interface = "./temp_clone/interface.py"
