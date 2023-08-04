@@ -3,7 +3,7 @@ import os
 import shutil
 import tkinter as tk
 import subprocess
-from interface import Aviso
+from src.interface import Aviso
 
 
 def UpdateInt():
@@ -22,16 +22,16 @@ def UpdateInt():
     def reiniciar():
         # executa o arquivo main.py novamente
         # colocar caminho completo da main
-        subprocess.call(["python3", "./main.py"])
+        subprocess.call(["python3", "/home/pi/psel-shinier-2023-iot/src/main.py"])
 
     # localizacoes dos arquivos
     # adicionar caminho COMPLETO
     repo_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"
-    arq_ant = "./interface.py"
-    arq_fim = "./"
-    arq_temp_interface = "./temp_clone/interface.py"
-    temp = "./temp_clone"
-    saves = "./saves"
+    arq_ant = "/home/pi/psel-shinier-2023-iot/src/interface.py"
+    arq_fim = "/home/pi/psel-shinier-2023-io/src"
+    arq_temp_interface = "/home/pi/psel-shinier-2023-iot/src/temp_clone/interface.py"
+    temp = "/home/pi/psel-shinier-2023-iot/src/temp_clone"
+    saves = "/home/pi/psel-shinier-2023-iot/src/saves"
 
     # se as pastas já nao existirem, cria uma nova
     if not os.path.exists(temp):
