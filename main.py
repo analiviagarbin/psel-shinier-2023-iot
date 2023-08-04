@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
-from src.interface import janela
-from src.update import UpdateInt
+from interface import janela
+from update import UpdateInt
 import threading
 
 

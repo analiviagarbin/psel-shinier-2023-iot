@@ -3,7 +3,7 @@ import os
 import shutil
 import tkinter as tk
 import subprocess
-from src.interface import Aviso
+from interface import Aviso
 
 
 def UpdateInt():
