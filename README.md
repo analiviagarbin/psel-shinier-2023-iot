@@ -57,11 +57,11 @@ sudo nano /home/pi/.bashrc
 ```
 
 Adicionar no final do arquivo
-(Conferir a localização e nome do arquivo na máquina)
+(Conferir a localização completa e nome do arquivo na máquina)
 
 ```
 echo Running at boot 
-sudo python3 /home/pi/main.py
+python3 /home/pi/main.py 
 ```
 
 Para testes:
