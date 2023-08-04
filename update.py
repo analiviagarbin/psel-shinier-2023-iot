@@ -22,16 +22,16 @@ def UpdateInt():
     def reiniciar():
         # executa o arquivo main.py novamente
         # colocar caminho completo da main
-        subprocess.call(["python3", "/home/pi/psel-shinier-2023-iot/src/main.py"])
+        subprocess.call(["python3", "/home/pi/psel-shinier-2023-iot/main.py"])
 
     # localizacoes dos arquivos
     # adicionar caminho COMPLETO
     repo_url = "https://github.com/analiviagarbin/psel-shinier-2023-iot"
-    arq_ant = "/home/pi/psel-shinier-2023-iot/src/interface.py"
-    arq_fim = "/home/pi/psel-shinier-2023-io/src"
-    arq_temp_interface = "/home/pi/psel-shinier-2023-iot/src/temp_clone/interface.py"
-    temp = "/home/pi/psel-shinier-2023-iot/src/temp_clone"
-    saves = "/home/pi/psel-shinier-2023-iot/src/saves"
+    arq_ant = "/home/pi/psel-shinier-2023-iot/interface.py"
+    arq_fim = "/home/pi/psel-shinier-2023-io"
+    arq_temp_interface = "/home/pi/psel-shinier-2023-iot/temp_clone/interface.py"
+    temp = "/home/pi/psel-shinier-2023-iot/temp_clone"
+    saves = "/home/pi/psel-shinier-2023-iot/saves"
 
     # se as pastas já nao existirem, cria uma nova
     if not os.path.exists(temp):
